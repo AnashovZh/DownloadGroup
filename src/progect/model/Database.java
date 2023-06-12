@@ -6,6 +6,14 @@ public class Database {
     private ArrayList<Group>groups=new ArrayList<>();
     private ArrayList<Student>students=new ArrayList<>();
     private ArrayList<Lesson>lessons=new ArrayList<>();
+    private ArrayList<User>users=new ArrayList<>();
+
+    public Database(ArrayList<User> users, ArrayList<Group> groups, ArrayList<Student> students, ArrayList<Lesson> lessons) {
+        this.users = users;
+        this.groups = groups;
+        this.students = students;
+        this.lessons = lessons;
+    }
 
     public Database() {
     }
@@ -14,6 +22,14 @@ public class Database {
         this.groups = groups;
         this.students = students;
         this.lessons = lessons;
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
     }
 
     public ArrayList<Group> getGroups() {

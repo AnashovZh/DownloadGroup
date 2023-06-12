@@ -6,4 +6,7 @@ public interface LessonService {
     void addLessonToGroup(String groupName,Lesson lesson);
     void getLessonByName(String lessonName);
     void getAllLessonByGroupName(String groupName);
+    void getAllStudentsLessonByNameSt(String studentName);
+
+    void deleteLesson(String lessonName);
 }

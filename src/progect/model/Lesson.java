@@ -1,20 +1,17 @@
 package progect.model;
 
 public class Lesson {
+    private static long counter=1;
     private Long id;
     private String nameLesson;
     private String  description;
 
-    public Lesson(Long id, String nameLesson, String description) {
-        this.id = id;
+    public Lesson( String nameLesson, String description) {
+        this.id = counter++;
         this.nameLesson = nameLesson;
         this.description = description;
     }
 
-    public Lesson(String nameLesson, String description) {
-        this.nameLesson = nameLesson;
-        this.description = description;
-    }
 
     public Long getId() {
         return id;
@@ -43,7 +40,8 @@ public class Lesson {
     @Override
     public String toString() {
         return "Lesson{" +
-                "nameLesson='" + nameLesson + '\'' +
+                "id=" + id +
+                ", nameLesson='" + nameLesson + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

@@ -3,25 +3,19 @@ package progect.model;
 import java.util.ArrayList;
 
 public class Group {
+    private static long counter=1;
     private long id;
     private String name;
     private String description;
     private ArrayList<Lesson>lessons;
     private ArrayList<Student>students;
 
-    public Group(long id, String name, String description, ArrayList<Lesson> lessons, ArrayList<Student> students) {
-        this.id = id;
+    public Group(String name, String description) {
+        this.id = counter++;
         this.name = name;
         this.description = description;
-        this.lessons = lessons;
-        this.students = students;
     }
 
-    public Group(long id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
 
     public long getId() {
         return id;
@@ -47,10 +41,15 @@ public class Group {
         this.description = description;
     }
 
-    public ArrayList<Lesson> getLessons() {
-        return lessons;
-    }
+//    public ArrayList<Lesson> getLessons() {
+//        return lessons;
+//    }
 
+    public ArrayList<Lesson> getLessons() {
+        if (lessons == null) {
+            lessons = new ArrayList<>();
+        }
+        return lessons;}
     public void setLessons(ArrayList<Lesson> lessons) {
         this.lessons = lessons;
     }
@@ -58,7 +57,13 @@ public class Group {
         lessons.add(lesson);
     }
 
-    public ArrayList<Student> getStudents() {
+//    public ArrayList<Student> getStudents() {
+//        return students;
+//    }
+public ArrayList<Student> getStudents() {
+        if (students==null){
+            students=new ArrayList<>();
+        }
         return students;
     }
 
